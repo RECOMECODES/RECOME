@@ -1,0 +1,18 @@
+# Universal Settings
+cache_path : "cache"
+ast_parser_path : "dependency/cppparser.so"
+old_new_func_dataset_path : "/path/to/old/new/funcs"
+# Multiprocess Workers
+metrics_filter_workers: 10
+hash_filter_workers : 30
+patch_filter_workers : 60
+# Metrics Filter & Comparator
+metrics_choice: [0, 2]
+target_recall : 0.9
+use_full_set : False
+# Hash Filter
+mmh_seed : 42
+hash_sim_threshold : 0.7
+# Bypassing
+bypass_metrics_filter: False
+bypass_patch_compare: False
