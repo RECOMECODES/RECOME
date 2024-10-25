@@ -188,11 +188,12 @@ For space reasons, some of the content could not be presented in the paper and i
 ### Investigation of Vulnerability Propagation on all 51,485 C/C++ projects
 
 **Top ten projects with most detected vulnerabilities**
-
+![image](https://github.com/RECOMECODES/RECOME/blob/main/images/1.jpg)
 **Top ten widely propagated vulnerability types**
-
+![image](https://github.com/RECOMECODES/RECOME/blob/main/images/2.jpg)
 **The CDF distribution of CVSS scores**
-
+![image](https://github.com/RECOMECODES/RECOME/blob/main/images/3.jpg)
 **Top ten vulnerabilities with the highest monthly vulnerability proliferation rate**
-
+![image](https://github.com/RECOMECODES/RECOME/blob/main/images/4.jpg)
 **Number of vulnerabilities from CVE-2010-0205**
+![image](https://github.com/RECOMECODES/RECOME/blob/main/images/5.jpg)
