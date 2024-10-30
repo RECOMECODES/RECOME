@@ -203,19 +203,6 @@ Spearman-Rank Correlation and Kendall-tau Correlation are also non-parametric me
 They are calculated based on the ranks of variables rather than the numerical values of the original data, thus requiring no assumptions about the distribution of the data. 
 These three methods are robust, meaning they can provide reliable estimates of correlation even when the data does not follow a normal distribution.
 
-### Vulnerability Types.
-We analyzed 147 vulnerabilities detected by RECOME. We found that the majority of the vulnerabilities fall into the following six categories. 
-For instance, there are 35 Buffer Overflow vulnerabilities (CWE-119), 26 Improper Input Validation vulnerabilities (CWE-20), 14 Integer Overflow or Wraparound vulnerabilities (CWE-190), 12 Null Pointer Dereference vulnerabilities (CWE-476), 11 Out-of-bounds Read vulnerabilities (CWE-125), and 10 Out-of-bounds Write vulnerabilities (CWE-787). 
-This indicates that RECOME is more proficient at detecting these six types of vulnerabilities, while it pays less attention to other types of vulnerabilities, such as CWE-399, CWE-834, CWE-434, CWE-362, and CWE-754.
-There are three possible reasons for this phenomenon.
-Firstly, the metrics we selected might lead to a bias towards certain types of vulnerabilities. 
-Using LOC for filtering might favor complexly constructed vulnerabilities, potentially missing those that can be triggered with fewer lines of code. 
-Using NEXP might bias towards vulnerabilities related to expressions, ignoring those unrelated to expressions.
-For example, the ``_sizeof_'' and ``_pointer_'' expressions focus more on buffer size and pointer usage, allowing RECOME to proficiently detect out-of-bounds read and write vulnerabilities.
-Conversely, CWE-362 is caused by the shared resource being modified by another code sequence operating concurrently, which is unrelated to a single expression, thus RECOME is not adept at detecting CWE-362 vulnerabilities.
-Additionally, since RECOME is a tool for detecting recurring vulnerabilities, the types of vulnerabilities it detects can also be influenced by the dataset. Expanding the dataset could encompass a broader range of vulnerability types.
-Lastly, common vulnerabilities like CWE-20 and CWE-787 are prevalent in real-world applications, which may explain RECOME's higher detection count.
-
 ### All 20 expression types.
 
 | Expression Type               | Description                                                                                                                                                   |
@@ -241,6 +228,19 @@ Lastly, common vulnerabilities like CWE-20 and CWE-787 are prevalent in real-wor
 | gnu\_asm\_expression          | An expression embedding GNU assembly code, commonly used in C and C\+\+\.                                                                                     |
 | lambda\_expression            | An expression for creating anonymous functions, typically used in functional programming languages or languages supporting functional programming paradigms\. |
 
+
+### Vulnerability Types.
+We analyzed 147 vulnerabilities detected by RECOME. We found that the majority of the vulnerabilities fall into the following six categories. 
+For instance, there are 35 Buffer Overflow vulnerabilities (CWE-119), 26 Improper Input Validation vulnerabilities (CWE-20), 14 Integer Overflow or Wraparound vulnerabilities (CWE-190), 12 Null Pointer Dereference vulnerabilities (CWE-476), 11 Out-of-bounds Read vulnerabilities (CWE-125), and 10 Out-of-bounds Write vulnerabilities (CWE-787). 
+This indicates that RECOME is more proficient at detecting these six types of vulnerabilities, while it pays less attention to other types of vulnerabilities, such as CWE-399, CWE-834, CWE-434, CWE-362, and CWE-754.
+There are three possible reasons for this phenomenon.
+Firstly, the metrics we selected might lead to a bias towards certain types of vulnerabilities. 
+Using LOC for filtering might favor complexly constructed vulnerabilities, potentially missing those that can be triggered with fewer lines of code. 
+Using NEXP might bias towards vulnerabilities related to expressions, ignoring those unrelated to expressions.
+For example, the _"sizeof"_ and _"pointer"_ expressions focus more on buffer size and pointer usage, allowing RECOME to proficiently detect out-of-bounds read and write vulnerabilities.
+Conversely, CWE-362 is caused by the shared resource being modified by another code sequence operating concurrently, which is unrelated to a single expression, thus RECOME is not adept at detecting CWE-362 vulnerabilities.
+Additionally, since RECOME is a tool for detecting recurring vulnerabilities, the types of vulnerabilities it detects can also be influenced by the dataset. Expanding the dataset could encompass a broader range of vulnerability types.
+Lastly, common vulnerabilities like CWE-20 and CWE-787 are prevalent in real-world applications, which may explain RECOME's higher detection count.
 
 ### False Positive Analysis for VUDDY and MOVERY.
 Most of the false positives generated by VUDDY are caused by abstraction. 
