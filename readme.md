@@ -185,7 +185,38 @@ The thresholds provided in `threshold.yml` are based on our findings in prelimin
 ## Supplement to the Paper
 For space reasons, some of the content could not be presented in the paper and is written here as an addendum to the paper.
 
-### All 20 expression types
+### The detailed description of three importance calculation methods.
+Random Forest is a machine learning method that constructs multiple decision trees for classification or regression. 
+It excels not only in classification tasks but also in providing interpretability by outputting feature importance. 
+This offers a straightforward and intuitive means to interpret the model, making it a common method for importance calculation.
+Distance Correlation and Maximal Information Coefficient are common statistical measures used to quantify the relationship between two variables.
+They are used to assess the extent to which the occurrence of one random event influences the probability of another random event. 
+When one event is the target variable, a stronger correlation between features and the target variable indicates higher feature importance. 
+Distance Correlation and Maximal Information Coefficient exhibit a certain level of robustness, being relatively less affected by outliers and noise, thus offering resilience against anomalies in the data to some extent. 
+Therefore, we choose these three methods to compute the importance of the 18 metrics.
+
+### The detailed description of three correlation calculation methods.
+Distance Correlation is a common non-parametric method for measuring the correlation between two variables. 
+It is defined by projecting the original data into a high-dimensional space and then computing the correlation between the Euclidean distances of data points and distances in the high-dimensional space.
+It utilizes the distance matrix between samples to calculate the distance correlation coefficient, regardless of the distribution form of the original data.
+Spearman-Rank Correlation and Kendall-tau Correlation are also non-parametric methods used to measure the correlation between two variables. 
+They are calculated based on the ranks of variables rather than the numerical values of the original data, thus requiring no assumptions about the distribution of the data. 
+These three methods are robust, meaning they can provide reliable estimates of correlation even when the data does not follow a normal distribution.
+
+### Vulnerability Types.
+We analyzed 147 vulnerabilities detected by RECOME. We found that the majority of the vulnerabilities fall into the following six categories. 
+For instance, there are 35 Buffer Overflow vulnerabilities (CWE-119), 26 Improper Input Validation vulnerabilities (CWE-20), 14 Integer Overflow or Wraparound vulnerabilities (CWE-190), 12 Null Pointer Dereference vulnerabilities (CWE-476), 11 Out-of-bounds Read vulnerabilities (CWE-125), and 10 Out-of-bounds Write vulnerabilities (CWE-787). 
+This indicates that RECOME is more proficient at detecting these six types of vulnerabilities, while it pays less attention to other types of vulnerabilities, such as CWE-399, CWE-834, CWE-434, CWE-362, and CWE-754.
+There are three possible reasons for this phenomenon.
+Firstly, the metrics we selected might lead to a bias towards certain types of vulnerabilities. 
+Using LOC for filtering might favor complexly constructed vulnerabilities, potentially missing those that can be triggered with fewer lines of code. 
+Using NEXP might bias towards vulnerabilities related to expressions, ignoring those unrelated to expressions.
+For example, the ``_sizeof_'' and ``_pointer_'' expressions focus more on buffer size and pointer usage, allowing RECOME to proficiently detect out-of-bounds read and write vulnerabilities.
+Conversely, CWE-362 is caused by the shared resource being modified by another code sequence operating concurrently, which is unrelated to a single expression, thus RECOME is not adept at detecting CWE-362 vulnerabilities.
+Additionally, since RECOME is a tool for detecting recurring vulnerabilities, the types of vulnerabilities it detects can also be influenced by the dataset. Expanding the dataset could encompass a broader range of vulnerability types.
+Lastly, common vulnerabilities like CWE-20 and CWE-787 are prevalent in real-world applications, which may explain RECOME's higher detection count.
+
+### All 20 expression types.
 
 | Expression Type               | Description                                                                                                                                                   |
 |-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
