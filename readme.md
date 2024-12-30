@@ -182,6 +182,7 @@ The experiments are conducted on a machine with a 3.40 GHz Intel i7-13700k proce
 The thresholds provided in `threshold.yml` are based on our findings in preliminary research provided in our paper.
 
 
+<!--
 ## Supplement to the Paper
 For space reasons, some of the content could not be presented in the paper and is written here as an addendum to the paper.
 
@@ -255,3 +256,5 @@ Additionally, MOVERY also generates false positives due to the application of ab
 The use of precise matching after abstraction may cause VUDDY to miss changes that do not affect vulnerability triggering, resulting in a large number of false negatives. 
 The use of deleted and added lines of MOVERY leads to false negatives for the same reason as RECOME. 
 Moreover, The lack of counting added lines results in more false negatives in MOVERY compared to our method.
+
+-->
