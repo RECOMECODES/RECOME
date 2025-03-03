@@ -206,9 +206,9 @@ These three methods are robust, meaning they can provide reliable estimates of c
 
 
 ### The result of three correlation calculation methods.
-![The Spearman correlations between 14 code metrics](https://github.com/RECOMECODES/RECOME/blob/main/images/Spearman.pdf)
-![The Distance correlations between 14 code metrics](https://github.com/RECOMECODES/RECOME/blob/main/images/Distance.pdf)
-![The Kendall correlations between 14 code metrics](https://github.com/RECOMECODES/RECOME/blob/main/images/Kendall.pdf)
+![The Spearman correlations between 14 code metrics](https://github.com/RECOMECODES/RECOME/blob/main/images/Spearman.png)
+![The Distance correlations between 14 code metrics](https://github.com/RECOMECODES/RECOME/blob/main/images/Distance.png)
+![The Kendall correlations between 14 code metrics](https://github.com/RECOMECODES/RECOME/blob/main/images/Kendall.png)
 
 
 ### All 20 expression types.
