@@ -204,6 +204,13 @@ Spearman-Rank Correlation and Kendall-tau Correlation are also non-parametric me
 They are calculated based on the ranks of variables rather than the numerical values of the original data, thus requiring no assumptions about the distribution of the data. 
 These three methods are robust, meaning they can provide reliable estimates of correlation even when the data does not follow a normal distribution.
 
+
+### The result of three correlation calculation methods.
+![The Spearman correlations between 14 code metrics](https://github.com/RECOMECODES/RECOME/blob/main/images/Spearman.pdf)
+![The Distance correlations between 14 code metrics](https://github.com/RECOMECODES/RECOME/blob/main/images/Distance.pdf)
+![The Kendall correlations between 14 code metrics](https://github.com/RECOMECODES/RECOME/blob/main/images/Kendall.pdf)
+
+
 ### All 20 expression types.
 
 | Expression Type               | Description                                                                                                                                                   |
